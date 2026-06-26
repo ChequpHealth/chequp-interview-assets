@@ -6,7 +6,7 @@ Small, stack-agnostic assets for the round-two technical exercise. Take what you
 
 - `tokens/tokens.css` — CheqUp brand colours, typography, spacing and radius as CSS custom properties. Theme against the variables rather than hardcoding values.
 - `locales/en.json` — a message catalogue (dictionary). One string is externalised as the pattern to follow; add your interface strings the same way rather than hardcoding them.
-- `brand/logo.svg` — the CheqUp logo.
+- `brand/logo.png` — the CheqUp logo.
 
 ## What to do with it
 
