@@ -1,0 +1,11 @@
+{
+  "app": {
+    "title": "CheqUp"
+  },
+  "actions": {
+    "submit": "Submit"
+  },
+  "validation": {
+    "required": "This field is required"
+  }
+}

@@ -1,0 +1,37 @@
+/* CheqUp design tokens — round-two exercise asset pack
+   NOTE: these values are scaffolding placeholders. Replace them with
+   CheqUp's canonical brand tokens before publishing the repo. */
+:root {
+  /* Brand */
+  --color-brand-primary: #1f6f5c;
+  --color-brand-primary-contrast: #ffffff;
+  --color-brand-secondary: #0b3d2e;
+
+  /* Neutrals */
+  --color-text: #1a1a1a;
+  --color-text-muted: #5c5c5c;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f4f6f5;
+  --color-border: #d7dcda;
+
+  /* Status — for the result screen's three outcomes */
+  --color-status-positive: #1f7a4d;
+  --color-status-caution: #b06f00;
+  --color-status-negative: #9a2c2c;
+
+  /* Typography */
+  --font-family-base: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-size-base: 16px;
+  --line-height-base: 1.5;
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+
+  /* Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+}
