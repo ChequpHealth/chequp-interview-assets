@@ -1,0 +1,75 @@
+openapi: 3.0.3
+info:
+  title: CheqUp round-two exercise — baseline
+  version: 0.1.0
+  description: >
+    A minimal baseline you can use to scaffold your project before the session.
+    It defines the auth mechanism and one example route, so you can stand up an
+    authenticated controller in your chosen stack ahead of time.
+
+    It deliberately does NOT describe the questionnaire, scoring, or result
+    endpoints. Designing those — the request and response shapes, validation,
+    status codes and error model — is part of the exercise.
+servers:
+  - url: http://localhost:8080
+    description: Local development
+components:
+  securitySchemes:
+    memberId:
+      type: apiKey
+      in: header
+      name: X-Member-Id
+      description: >
+        Identifies the current member. The value is a member id; two are seeded
+        by schema.sql (see the prep note). Requests without a valid id are rejected.
+  schemas:
+    Member:
+      type: object
+      required: [id, name]
+      properties:
+        id:
+          type: string
+          example: member-001
+        name:
+          type: string
+          example: Ada
+    Error:
+      type: object
+      required: [message]
+      properties:
+        message:
+          type: string
+security:
+  - memberId: []
+paths:
+  /health:
+    get:
+      summary: Liveness check (unauthenticated)
+      security: []
+      responses:
+        '200':
+          description: Service is up
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ok
+  /whoami:
+    get:
+      summary: Return the current member (example of an authenticated route)
+      responses:
+        '200':
+          description: The member identified by the X-Member-Id header
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Member'
+        '401':
+          description: Missing or unknown member id
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
