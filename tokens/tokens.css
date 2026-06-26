@@ -1,26 +1,29 @@
 /* CheqUp design tokens — round-two exercise asset pack
-   NOTE: these values are scaffolding placeholders. Replace them with
-   CheqUp's canonical brand tokens before publishing the repo. */
+   Brand values are CheqUp's canonical tokens, sourced from the www-mirror
+   theme. Variable names are the theming contract — theme against these rather
+   than hardcoding the values. The micro-spacing scale, base font size and line
+   height are sensible defaults (the brand defines only section-level spacing),
+   so adjust them if your layout needs differ. */
 :root {
   /* Brand */
-  --color-brand-primary: #1f6f5c;
+  --color-brand-primary: #683CF5;          /* potent purple */
   --color-brand-primary-contrast: #ffffff;
-  --color-brand-secondary: #0b3d2e;
+  --color-brand-secondary: #210847;        /* midnight */
 
   /* Neutrals */
-  --color-text: #1a1a1a;
-  --color-text-muted: #5c5c5c;
+  --color-text: #1d1b29;
+  --color-text-muted: #6a6880;
   --color-surface: #ffffff;
-  --color-surface-muted: #f4f6f5;
-  --color-border: #d7dcda;
+  --color-surface-muted: #F2F9FC;          /* soft white */
+  --color-border: #3A2A66;
 
   /* Status — for the result screen's three outcomes */
-  --color-status-positive: #1f7a4d;
-  --color-status-caution: #b06f00;
-  --color-status-negative: #9a2c2c;
+  --color-status-positive: #1e9e80;        /* success */
+  --color-status-caution: #b16f00;         /* warning */
+  --color-status-negative: #c23b3b;        /* error */
 
   /* Typography */
-  --font-family-base: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-family-base: "Kind Sans", Arial, sans-serif;
   --font-size-base: 16px;
   --line-height-base: 1.5;
 
@@ -32,6 +35,6 @@
   --space-5: 32px;
 
   /* Radius */
-  --radius-sm: 4px;
-  --radius-md: 8px;
+  --radius-sm: 8px;
+  --radius-md: 16px;
 }
