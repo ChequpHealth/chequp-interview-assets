@@ -1,15 +1,15 @@
 openapi: 3.0.3
 info:
-  title: CheqUp round-two exercise — baseline
+  title: CheqUp round-two exercise baseline
   version: 0.1.0
   description: >
     A minimal baseline you can use to scaffold your project before the session.
     It defines the auth mechanism and one example route, so you can stand up an
     authenticated controller in your chosen stack ahead of time.
 
-    It deliberately does NOT describe the questionnaire, scoring, or result
-    endpoints. Designing those — the request and response shapes, validation,
-    status codes and error model — is part of the exercise.
+    It does not describe the questionnaire, scoring, or result endpoints.
+    Designing those, including the request and response shapes, validation,
+    status codes and error model, is part of the exercise.
 servers:
   - url: http://localhost:8080
     description: Local development
@@ -20,19 +20,16 @@ components:
       in: header
       name: X-Member-Id
       description: >
-        Identifies the current member. The value is a member id; two are seeded
-        by schema.sql (see the prep note). Requests without a valid id are rejected.
+        Identifies the current member. Two members are seeded by schema.sql,
+        with ids 1 and 2 (see the prep note). Requests without a valid id are rejected.
   schemas:
     Member:
       type: object
-      required: [id, name]
+      required: [id]
       properties:
         id:
-          type: string
-          example: member-001
-        name:
-          type: string
-          example: Ada
+          type: integer
+          example: 1
     Error:
       type: object
       required: [message]
